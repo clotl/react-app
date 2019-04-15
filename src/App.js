@@ -9,13 +9,11 @@ class App extends Component {
 			<BrowserRouter>
 				<div>
 					<NavLink exact to="/">
-						{" "}
-						Home{" "}
+						Home
 					</NavLink>
 					<br />
 					<NavLink to="/notre-histoire" activeStyle={{ color: "red" }}>
-						{" "}
-						History{" "}
+						History
 					</NavLink>
 
 					<Switch>
