@@ -1,30 +1,47 @@
 import React, { Component } from "react";
 
-class Form extends Component (){
-  constructor (props){
-    super(props);
-    this.state {
-      title : '',
-      globalTitle : ''
-    }
-  }
+class FormEmployee extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			title: "",
+			globalTitle: ""
+		};
+		this.onChange = this.onChange.bind(this);
+		this.submitForm = this.submitForm.bind(this);
+	}
 
-  render (){
-    return (
-      <div>
-        <h1> Form </h1>
-        <form>
-          <div> 
-            <label> Text </label>
-            <input type="text" id="title" name="title" value={this.state.title}/>
-          </div>
-          <div>
-            <input type="submit" value="Ajouter" />
-          </div>
-        </form>
-      </div>
-    );
-  }
+	onChange(e) {
+		this.setState({
+			[e.target.name]: e.target.value
+		});
+	}
+	submitForm(e) {
+		e.preventDefault();
+	}
+
+	render() {
+		return (
+			<div>
+				<h1> Titre de la page !! </h1>
+				<form onSubmit={this.submitForm}>
+					<div>
+						{/* <label htmlFor="title"></label> */}
+						<input
+							type="text"
+							id="title"
+							name="title"
+							onChange={this.onChange}
+							value={this.state.lastname}
+						/>
+					</div>
+					<div>
+						<input type="submit" value="Valider" />
+					</div>
+				</form>
+			</div>
+		);
+	}
 }
 
-export default Form; 
+export default FormEmployee;
