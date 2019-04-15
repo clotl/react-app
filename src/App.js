@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route, BrowserRouter, Switch, NavLink } from "react-router-dom";
 import Home from "./Home";
-import Contact from "./Contact";
+import History from "./History";
 
 class App extends Component {
 	render() {
@@ -10,13 +10,17 @@ class App extends Component {
 				<div>
 					<NavLink exact to="/">
 						{" "}
-						Accueil{" "}
+						Home{" "}
 					</NavLink>
-					<NavLink to="/page-de-contact"> Contact </NavLink>
+					<br />
+					<NavLink to="/notre-histoire" activeStyle={{ color: "red" }}>
+						{" "}
+						History{" "}
+					</NavLink>
 
 					<Switch>
 						<Route exact path="/" component={Home} />
-						<Route path="/page-de-contact" component={Contact} />
+						<Route path="/notre-histoire" component={History} />
 					</Switch>
 				</div>
 			</BrowserRouter>
